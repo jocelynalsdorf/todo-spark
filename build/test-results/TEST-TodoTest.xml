@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TodoTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2015-08-19T14:40:19" hostname="josss-MacBook-Pro.local" time="0.08">
+<testsuite name="TodoTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2015-08-19T14:53:25" hostname="josss-MacBook-Pro.local" time="0.094">
   <properties/>
   <testcase name="find_returnsNullWhenNoTaskFound_null" classname="TodoTest" time="0.001"/>
-  <testcase name="clear_emptiesAllTasksFromArrayList" classname="TodoTest" time="0.076"/>
-  <testcase name="isCompleted_isFalseAfterInstantiation" classname="TodoTest" time="0.0"/>
+  <testcase name="clear_emptiesAllTasksFromArrayList" classname="TodoTest" time="0.09"/>
+  <testcase name="isCompleted_isFalseAfterInstantiation" classname="TodoTest" time="0.001"/>
   <testcase name="newTask_instantiatesCorrectly" classname="TodoTest" time="0.0"/>
+  <testcase name="newId_todoInstantiateWithAnID_true" classname="TodoTest" time="0.0"/>
   <testcase name="getCreatedAt_iinstantiatesWithCorrectTime" classname="TodoTest" time="0.0"/>
-  <testcase name="newTask_instantiatesCorrectlyWithDescription" classname="TodoTest" time="0.001"/>
+  <testcase name="all_returnsAllInstancesOfTask_true" classname="TodoTest" time="0.0"/>
+  <testcase name="newTask_instantiatesCorrectlyWithDescription" classname="TodoTest" time="0.0"/>
+  <testcase name="find_returnsTodoWithSameID" classname="TodoTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

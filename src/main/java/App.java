@@ -18,27 +18,22 @@ public class App {
 		return new ModelAndView(model, layout);
 		}, new VelocityTemplateEngine());
 
+		get("tasks",(request, response) -> {
+		HashMap<String, Object> model = new HashMap<String, Object>();
+		//make all instances availso that all tasks can be shown
+		model.put("tasks", Task.all());
+		model.put("template", "templates/tesk.vtl");
+		 return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+		})
 
 		post("/tasks", (request,response) -> {
 			HashMap<String, Object> model = new HashMap<String, Object>();
-			//below is saving the name of the array
-			ArrayList<Todo> todos = request.session().attribute("todos");
-
-			if (todos == null) {
-				todos = new ArrayList<Todo>();
-				request.session().attribute("todos", todos);
-			}
 
 			String description = request.queryParams("description");
-			Todo newTodo = new Todo(description);
-			todos.add(newTodo);
-			//instead of the code below we add newToDo to the array of todos above
-			//request.session().attribute("todo", newTodo);
-
-			//You dont need to put this in model here, do it as just a getter in model in GET.this bottom line can be done in multiple lines as well, like I did in tamagotchi I think.
-			//model.put("todo", request.session().attribute("todo", newTodo));
-
-
+			Todo newTodo = new Todo(description);		
 			model.put("template", "templates/success.vtl");
 			return new ModelAndView(model, layout);
 			}, new VelocityTemplateEngine());

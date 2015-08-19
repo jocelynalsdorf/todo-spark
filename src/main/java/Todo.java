@@ -15,8 +15,8 @@ private boolean mCompleted;
 	public Todo(String description){
 		mDescription = description;
 		mCreatedAt = LocalDateTime.now();
-		mId = instances.size();
 		instances.add(this);
+		mId = instances.size();
 		mCompleted = false;
 	}
 

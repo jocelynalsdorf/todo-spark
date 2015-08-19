@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 
 public class TodoTest {
 
-	@Rule
-  public ClearRule clearRule = new ClearRule();
+	// @Rule
+ //  public ClearRule clearRule = new ClearRule();
 
 
 	@Test
@@ -34,13 +34,27 @@ public class TodoTest {
 	}
 
 	
-	// @Test
-	// public void find_returnsTodoWithSameID() {
-	// Todo firstTodo = new Todo("mow the lawn");
-	// Todo secondTodo = new Todo("mow the sky");
-	// assertEquals(Todo.find(secondTodo.getId()), secondTodo);
-	// }
-	// 
+	@Test
+  public void newId_todoInstantiateWithAnID_true() {
+    Todo myTodo = new Todo("Mow the lawn");
+    assertEquals(Todo.all().size(), myTodo.getId());
+  }
+
+	@Test
+	public void find_returnsTodoWithSameID() {
+	Todo firstTodo = new Todo("mow the lawn");
+	Todo secondTodo = new Todo("mow the sky");
+	assertEquals(Todo.find(secondTodo.getId()), secondTodo);
+	}
+	
+	@Test
+  public void all_returnsAllInstancesOfTask_true() {
+    Todo firstTodo = new Todo("Mow the lawn");
+    Todo secondTodo = new Todo("Buy groceries");
+    assertTrue(Todo.all().contains(firstTodo));
+    assertTrue(Todo.all().contains(secondTodo));
+  }
+
 	
 
   @Test
