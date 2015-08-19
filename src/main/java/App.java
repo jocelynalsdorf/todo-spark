@@ -13,9 +13,7 @@ public class App {
 		get("/", (request,response) -> {
 		HashMap<String, Object> model = new HashMap<String, Object>();
 		model.put("template", "templates/index.vtl");
-		//request.session().attribute("todo");
-
-
+	
 		model.put("todos", request.session().attribute("todos"));
 		return new ModelAndView(model, layout);
 		}, new VelocityTemplateEngine());
@@ -37,7 +35,7 @@ public class App {
 			//instead of the code below we add newToDo to the array of todos above
 			//request.session().attribute("todo", newTodo);
 
-			//You dont need to put this in model here, do it as just a getter in model in GET
+			//You dont need to put this in model here, do it as just a getter in model in GET.this bottom line can be done in multiple lines as well, like I did in tamagotchi I think.
 			//model.put("todo", request.session().attribute("todo", newTodo));
 
 
