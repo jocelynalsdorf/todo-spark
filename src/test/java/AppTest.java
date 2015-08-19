@@ -1,6 +1,7 @@
 import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
 import org.junit.Test;
+import org.junit.rule;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.fluentlenium.core.filter.FilterConstructor.*;
@@ -17,6 +18,10 @@ public class AppTest extends FluentTest {
 
   @ClassRule
   public static ServerRule server = new ServerRule();
+
+
+  @Rule
+  public ClearRule clearRule = new ClearRule();
 
   import org.fluentlenium.adapter.FluentTest;
 import org.junit.ClassRule;
